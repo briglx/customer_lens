@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install Requirements",
+      "type": "shell",
+      "osx": {
+        "command": "python3 -m pip install -r requirements.txt"
+      },
+      "windows": {
+        "command": "python3 -m pip install -r requirements.txt"
+      },
+      "linux": {
+        "command": "python3 -m pip install -r requirements.txt"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Install Dev Requirements",
+      "type": "shell",
+      "osx": {
+        "command": "python3 -m pip install -r requirements_dev.txt"
+      },
+      "windows": {
+        "command": "python3 -m pip install -r requirements_dev.txt"
+      },
+      "linux": {
+        "command": "python3 -m pip install -r requirements_dev.txt"
+      },
+      "problemMatcher": [],
+    },
+    {
+      "label": "Code Linting",
+      "type": "shell",
+      "command": "pre-commit run --all-files",
+      "dependsOn": ["Install Dev Requirements"],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
