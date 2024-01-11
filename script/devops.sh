@@ -125,8 +125,9 @@ provision(){
 }
 
 deploy(){
-    # Prepare the app and deploy to cloud.
-    pass
+    # Deploy the application to the environment.
+    local deployment_name="CustomerLens.Deployment-${run_date}"
+    echo "Deploying ${deployment_name}"
 }
 
 # Globals
